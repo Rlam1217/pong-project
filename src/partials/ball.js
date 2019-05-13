@@ -8,6 +8,7 @@ export default class Ball {
         this.radius = radius;
         this.direction = 1;
         this.ping = new Audio(audioFile);
+        this.color = "white";
         this.reset();
     }
     reset() {
@@ -40,11 +41,18 @@ export default class Ball {
          if (this.x <= 0){
              player2.increaseScore();
              this.direction = this.direction * -1;
+             if (player2.getScore() >= 2) {
+                 this.color = 'red';}
+             if (player2.getScore() >= 4) {
+                    this.color = 'green';}   
              this.reset();
          }else if (this.x >= this.boardWidth) {
              player1.increaseScore();
              this.direction = this.direction * -1;
-             
+             if (player2.getScore() >= 2) {
+                this.color = 'red';}
+             if (player2.getScore() >= 4) {
+                    this.color = 'green';}  
              this.reset();
          }
          }
@@ -58,6 +66,7 @@ export default class Ball {
                     this.y  >= p2.top &&
                     this.y  <= p2.bottom) {
                     this.vx = this.vx * -1;
+                    this.ping.play();
                     }
         
           } else {
@@ -74,7 +83,7 @@ export default class Ball {
 
     render(svg, player1, player2) {
         let circle = document.createElementNS(SVG_NS, 'circle');
-        circle.setAttributeNS(null, "fill", "white");
+        circle.setAttributeNS(null, "fill", this.color);
         circle.setAttributeNS(null, "cx", this.x);
         circle.setAttributeNS(null, "cy", this.y);
         circle.setAttributeNS(null, "r", this.radius);

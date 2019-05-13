@@ -1,5 +1,5 @@
 import { SVG_NS, SPEED } from '../settings';
-import { timingSafeEqual } from 'crypto';
+
 
 export default class Paddle {
     constructor(boardHeight, paddleWidth, paddleHeight, intialX, intialY, keyUp, keyDown) {
@@ -25,12 +25,17 @@ export default class Paddle {
         });
     }
         increaseScore(){
-            this.score++;
-        }
+            this.score++ 
+        } 
 
         getScore() {
             return this.score;
         }
+
+        
+
+        
+
 
     moveUp() {
         this.y = Math.max(0, this.y - this.speed);

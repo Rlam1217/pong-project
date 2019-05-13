@@ -19,6 +19,7 @@ export default class Game {
     this.ball = new Ball(this.width, this.height, RADIUS);
     this.score1 = new Score(this.width/2 - 50, 30);
     this.score2 = new Score(this.width/2 + 50, 30);
+
     document.addEventListener("keydown", (event) =>{
       if(event.key === KEYS.pause) {
         this.paused = !this.paused;
@@ -45,6 +46,10 @@ export default class Game {
     this.ball.render(svg, this.paddle1, this.paddle2);
     this.score1.render(svg, this.paddle1.getScore());
     this.score2.render(svg, this.paddle2.getScore());
+    if (this.paddle1.getScore() === 15 || this.paddle2.getScore() === 15){
+      alert('winner!');
+      this.paused = true;
+    }
 
 
    
