@@ -26,7 +26,7 @@ export default class Paddle {
     }
         increaseScore(){
             this.score++ 
-            this.paddleHeight-=1;
+            this.paddleHeight-=2;
         } 
 
         getScore() {
