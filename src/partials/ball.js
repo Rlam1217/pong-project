@@ -11,6 +11,8 @@ export default class Ball {
         this.color = "white";
         this.reset();
     }
+
+
     reset() {
         this.x = this.boardWidth/2;
         this.y = this.boardHeight/2;
@@ -67,6 +69,7 @@ export default class Ball {
                     this.y  <= p2.bottom) {
                     this.vx = this.vx * -1;
                     this.ping.play();
+                    this.color = 'yellow';
                     }
         
           } else {
@@ -76,6 +79,9 @@ export default class Ball {
               this.y <= p1.bottom) {
                   this.vx = this.vx * -1;
                   this.ping.play();
+                  this.color = 'blue';
+                 
+                  
               }
        
             }
@@ -98,3 +104,4 @@ export default class Ball {
 
     }
 }
+

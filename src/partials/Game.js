@@ -17,6 +17,7 @@ export default class Game {
     const paddle2Gap = this.width - BOARD_GAP - PADDLE_WIDTH;
     this.paddle2 = new Paddle(this.height, PADDLE_WIDTH, PADDLE_HEIGHT, paddle2Gap, boardMid, KEYS.p2up, KEYS.p2down);
     this.ball = new Ball(this.width, this.height, RADIUS);
+    this.ball2 = new Ball(this.width, this.height, RADIUS);
     this.score1 = new Score(this.width/2 - 50, 30);
     this.score2 = new Score(this.width/2 + 50, 30);
 
@@ -44,13 +45,21 @@ export default class Game {
     this.paddle1.render(svg);
     this.paddle2.render(svg);
     this.ball.render(svg, this.paddle1, this.paddle2);
+   
     this.score1.render(svg, this.paddle1.getScore());
     this.score2.render(svg, this.paddle2.getScore());
+    
     if (this.paddle1.getScore() === 15 || this.paddle2.getScore() === 15){
       alert('winner!');
       this.paused = true;
     }
 
+    if  (this.paddle1.getScore() >= 6 || this.paddle2.getScore() >= 6){ 
+      this.ball2.render(svg, this.paddle1, this.paddle2);
+     
+    }
+
+  
 
    
 		// More code goes here....
