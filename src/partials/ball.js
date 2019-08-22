@@ -31,12 +31,6 @@ export default class Ball {
             this.vy = this.vy * -1;
         }
 
-        /// if (hitsLeft || hitsRight) {
-            /// increase score for the player who scored
-            /// this.direction = this.direction * -1
-            // this.reset();
-        //}
-
     }
 
      goalCollision(player1, player2) {

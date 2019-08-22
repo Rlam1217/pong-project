@@ -59,9 +59,5 @@ export default class Game {
      
     }
 
-  
-
-   
-		// More code goes here....
   }
 }

@@ -6,9 +6,6 @@ export default class Score {
         this.y = yPosition;
     }
 
-
-
-
 render(svg, score) {
     let text = document.createElementNS(SVG_NS, 'text');
     text.setAttributeNS(null, "height", this.height);
