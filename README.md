@@ -2,6 +2,30 @@
 
 A starter project for a basic pong game using SVGs.
 
+## Keys
+
+### Player 1:
+* w: up
+* s: down
+
+### Player 2:
+* ▲: up
+* ▼: down
+
+## Features
+
+* Each time the ball hits the paddles it sounds and changes color.
+* Multiple balls are triggered when a Player reaches a Score of 6.
+* The Player's paddle with the higher score begins to shrink for fun competitive gameplay.
+* First Player to the Score of 15 is the Winner!
+
+## Personal Learnings
+
+* Building this game was my intro to JavaScript.
+* Using Node.js to run JavaScript on a server.
+* Using classes and constructors.
+* Using SVGs.
+
 ## Setup
 
 Ensure you have [Node.js](https://nodejs.org/en/) installed first.
